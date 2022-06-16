@@ -22,5 +22,6 @@ justify-content: space-evenly;
 a{
     color: white;
     justify-content: space-around;
+    border: 2px solid white;
 }
 `
