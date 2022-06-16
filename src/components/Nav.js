@@ -6,10 +6,10 @@ import styled from 'styled-components';
 function Nav(){
     return(
         <Div>
-        <Link to='/' >Get TODAY'S photo!</Link>
-        <Link to='/getall' >Get ALL photos!</Link>
-        <Link to='/getrand' >Get a RANDOM photo!</Link>
-        <Link to='/getnext'>BROWSE photos in RANGE!</Link>
+        <Link to='/' > Get TODAY'S photo! </Link>
+        <Link to='/getall' > Get ALL photos! </Link>
+        <Link to='/getrand' > Get a RANDOM photo!</Link>
+        <Link to='/getnext'> BROWSE photos in RANGE! </Link>
         </Div>
     )
 }
