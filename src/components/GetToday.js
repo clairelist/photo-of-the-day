@@ -1,10 +1,15 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import {API_KEY} from '../api/keys'
+import {API_KEY} from '../api/keys';
+
+import styled from 'styled-components';
 
 const loadingState = 'Fetching your photo. Waiting...';
 
+
+
 export function GetToday(){
+    
     const [photo, setPhoto] = useState(loadingState);
 
     useEffect(()=>{
@@ -19,13 +24,13 @@ export function GetToday(){
     },[]);
 
     return(
-        <div className='today-photo'>
-            <img src={photo} alt={`Nasa APOD for today`}></img>
+        <div className='today-photo' style={{backgroundImage: `url(${photo})`}}>
+            <h2>GREETINGS FROM TODAY'S PHOTO</h2>
+            {/* <img src={photo} alt={`Nasa APOD for today`}></img> */}
         </div>
     )
 }
 
 export default GetToday;
 
-//install styled react component so we can set this photo as the background image
-//and be sure to change text opacity of our Nav links !
+//TODO:: GET THIS DIV TO TAKE UP 100% OF THE SCREEN!
