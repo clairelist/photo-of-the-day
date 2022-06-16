@@ -6,9 +6,7 @@ import styled from 'styled-components';
 
 const loadingState = 'Fetching your photo. Waiting...';
 
-
-
-export function GetToday(){
+function GetToday(){
     
     const [photo, setPhoto] = useState(loadingState);
 
@@ -28,7 +26,7 @@ export function GetToday(){
             <Img src={photo} 
             alt={`Nasa APOD for today`}
             >
-                
+
             </Img>
         </div>
     )
