@@ -1,7 +1,6 @@
-//BE SURE to import LINK from react-router-dom
-//!?::--> or... create a seperate NAV component ?
-
 import {Link} from 'react-router-dom';
+
+//I am SEPERATE from ROUTES because I want to have some styling done HERE !
 
 function Nav(){
     return(
@@ -13,3 +12,5 @@ function Nav(){
         </div>
     )
 }
+
+export default Nav;
