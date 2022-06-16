@@ -1,0 +1,3 @@
+- [ ] Apply for a NASA APOD API dev key!
+- [ ] Flesh out MVP reqs for this document!
+- [ ] Exorcise react app readme infos!
