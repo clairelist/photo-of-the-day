@@ -24,13 +24,26 @@ export function GetToday(){
     },[]);
 
     return(
-        <div className='today-photo' style={{backgroundImage: `url(${photo})`}}>
-            <h2>GREETINGS FROM TODAY'S PHOTO</h2>
-            {/* <img src={photo} alt={`Nasa APOD for today`}></img> */}
+        <div className='today-photo' >
+            <Img src={photo} 
+            alt={`Nasa APOD for today`}
+            >
+                
+            </Img>
         </div>
     )
 }
 
 export default GetToday;
 
-//TODO:: GET THIS DIV TO TAKE UP 100% OF THE SCREEN!
+//TODO:: GET RID OF WEIRD WHITE BOX! ADD TEXT OVERLAY!
+
+// position:absolute;
+//   top:0px;
+//   right:0px;
+//   bottom:0px;
+//   left:0px;
+
+const Img = styled.img`
+height: 100%;
+`
