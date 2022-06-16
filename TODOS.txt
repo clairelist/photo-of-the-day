@@ -8,4 +8,7 @@
 - [ ] User can get a random photo by visiting /getrandom
 - [ ] User can swipe / click through for NEXT photo or PREVIOUS photo by visiting /getnext
 
+{ LEVEL_TWO } --> Sprint goals
 - [ ] Get 100% test coverage
+- [ ] Deploy using Vercel
+- [ ] Port to mobile experience
