@@ -1,3 +1,4 @@
+import Routing from './Routes';
 
 import '../App.css';
 
@@ -6,7 +7,7 @@ import '../App.css';
 function App() {
   return (
     <div className="App">
-      {/*OUR ROUTES COMPONENT SHOULD GO HERE!*/}
+     <Routing />
     </div>
   );
 }

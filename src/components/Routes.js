@@ -1,8 +1,11 @@
-//I contain the ROUTING logic of the application as a whole
-//REMEMBER TO WRAP OUR APP IN REACT ROUTER
+import {Route, Routes} from 'react-router-dom';
+//don't forget to import a real element to pass to our element prop!
+
 function Routing () {
     return(
-        <div></div>
+        <Routes>
+            <Route exact path='path' element={<Element />} />
+        </Routes>
     )
 }
 
