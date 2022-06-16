@@ -1,3 +1,11 @@
 - [X] Apply for a NASA APOD API dev key!
-- [ ] Flesh out MVP reqs for this document!
+- [X] Flesh out MVP reqs for this document!
 - [X] Exorcise react app readme infos!
+
+{ MVP } --> Minimum Viable Product
+- [ ] User can get today's photo of the day by visiting / or /home
+- [ ] User can get all photos since epoch and browse through them by visiting /getall
+- [ ] User can get a random photo by visiting /getrandom
+- [ ] User can swipe / click through for NEXT photo or PREVIOUS photo by visiting /getnext
+
+- [ ] Get 100% test coverage
