@@ -10,5 +10,6 @@
 
 { LEVEL_TWO } --> Sprint goals
 - [ ] Get 100% test coverage
+- [ ] Product looks nice (styling!)
 - [ ] Deploy using Vercel
 - [ ] Port to mobile experience
