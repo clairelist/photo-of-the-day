@@ -4,7 +4,8 @@
 
 { MVP } --> Minimum Viable Product
 - [X] User can get today's photo of the day by visiting / or /home
-- [ ] User can get all photos since epoch and browse through them by visiting /getall
+- [-] User can get all photos since epoch and browse through them by visiting /getall
+        CHANGED:: We can only return a MAXIMUM of 100 images; therefore, return the last 100 days' worth of images instead.
 - [ ] User can click on a single photo in the getall view and the application will display that singular photo on the screen ( route to /getById )
 - [ ] User can get a random photo by visiting /getrandom
 - [ ] User can swipe / click through for NEXT photo or PREVIOUS photo by visiting /getnext

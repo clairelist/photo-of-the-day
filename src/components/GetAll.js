@@ -7,15 +7,20 @@ import {API_KEY} from '../api/keys';
 
 import styled from 'styled-components';
 
-const loadingState = 'Fetching ALL photos since epoch, please wait...';
+const loadingState = ['Fetching ALL photos since epoch, please wait...']; //I NEED TO INITALIZE AS AN ARRAY, ELSE THE BELOW MAP FUNCTION WON'T WORK. I FINALLY FIGURED IT OUT! 
+//YOUR INITIAL DATA HAS TO MATCH THE DATA TYPE OF WHATEVER MANIPULATIONS YOU DO TO IT
+//IE MAP WAS FAILING BECAUSE JS KEPT TRYING TO MAP OVER A NON-ARRAY!
+
+//FURTHERMORE, since we can only return a MAX of 100 images, this will be refactored to display ALL images from the past 100 days ONLY!
+//thus, our start_date needs to be equal to today - 100
 
 function GetAll(){
 
     const [photos, setPhotos] = useState(loadingState);
 
-    //start date:: 1995-06-16 ...we can only return a MAX of 100 images. Waiting...
+    //start date:: 1995-06-16 ...currently, I return 10 RANDOM images. Waiting...
     useEffect(()=>{
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start-date=1995-06-16`)
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=10`)
         .then(res=>{
             setPhotos([...photos, ...res.data]); //I need to be spread in an array ! let's see what happens if we don't include ...photos here !
         }).catch(err=>{
@@ -29,7 +34,7 @@ function GetAll(){
         <div>
             {photos.map(photo => (
             <div className='photos-wrapper' key={photo.date}>
-               <Img src ={photo.url} alt={`Nasa APOD for ${photo.date}`}/>
+               <Img src ={photo.url} alt={`Nasa APOD for the past 10 days`}/>
             </div>
             ) 
             )}
@@ -41,5 +46,6 @@ export default GetAll;
 
 const Img = styled.img`
 height: 15%;
-width: 15%
+width: 15%;
+display:grid;
 `
