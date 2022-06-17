@@ -44,4 +44,5 @@ export default GetToday;
 
 const Img = styled.img`
 height: 100%;
+width: 100%;
 `
