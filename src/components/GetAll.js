@@ -8,12 +8,9 @@ import dateFinal from '../constants';
 
 import styled from 'styled-components';
 
-const loadingState = []; //I NEED TO INITALIZE AS AN ARRAY, ELSE THE BELOW MAP FUNCTION WON'T WORK. I FINALLY FIGURED IT OUT! 
+const loadingState = ['LOADING, please wait']; //I NEED TO INITALIZE AS AN ARRAY, ELSE THE BELOW MAP FUNCTION WON'T WORK. I FINALLY FIGURED IT OUT! 
 //YOUR INITIAL DATA HAS TO MATCH THE DATA TYPE OF WHATEVER MANIPULATIONS YOU DO TO IT
 //IE MAP WAS FAILING BECAUSE JS KEPT TRYING TO MAP OVER A NON-ARRAY!
-
-//FURTHERMORE, since we can only return a MAX of 100 images, this will be refactored to display ALL images from the past 100 days ONLY!
-//thus, our start_date needs to be equal to today - 100
 
 function GetAll(){
 
@@ -21,7 +18,7 @@ function GetAll(){
 
     //start date:: 1995-06-16 ...currently, I return 10 RANDOM images. Waiting...
     useEffect(()=>{
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=10`)
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=${dateFinal()}`)
         .then(res=>{
             setPhotos([...photos, ...res.data]); //I need to be spread in an array ! let's see what happens if we don't include ...photos here !
             dateFinal();
@@ -36,7 +33,7 @@ function GetAll(){
         <div>
             {photos.map(photo => (
             <div className='photos-wrapper' key={photo.date}>
-               <Img src ={photo.url} alt={`Nasa APOD for the past 10 days`}/>
+               <Img src ={photo.url} alt={`Nasa APOD for the past 100 days`}/>
             </div>
             ) 
             )}
