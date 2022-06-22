@@ -16,11 +16,10 @@ function GetAll(){
 
     const [photos, setPhotos] = useState(loadingState);
 
-    //start date:: 1995-06-16 ...currently, I return 10 RANDOM images. Waiting...
     useEffect(()=>{
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=${dateFinal()}`)
         .then(res=>{
-            setPhotos([...photos, ...res.data]); //I need to be spread in an array ! let's see what happens if we don't include ...photos here !
+            setPhotos([...photos, ...res.data]); //I need to be spread in an array
             dateFinal();
         }).catch(err=>{
             console.error(err);
