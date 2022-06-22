@@ -4,10 +4,11 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {API_KEY} from '../api/keys';
+import dateFinal from '../constants';
 
 import styled from 'styled-components';
 
-const loadingState = ['Fetching ALL photos since epoch, please wait...']; //I NEED TO INITALIZE AS AN ARRAY, ELSE THE BELOW MAP FUNCTION WON'T WORK. I FINALLY FIGURED IT OUT! 
+const loadingState = []; //I NEED TO INITALIZE AS AN ARRAY, ELSE THE BELOW MAP FUNCTION WON'T WORK. I FINALLY FIGURED IT OUT! 
 //YOUR INITIAL DATA HAS TO MATCH THE DATA TYPE OF WHATEVER MANIPULATIONS YOU DO TO IT
 //IE MAP WAS FAILING BECAUSE JS KEPT TRYING TO MAP OVER A NON-ARRAY!
 
@@ -23,6 +24,7 @@ function GetAll(){
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=10`)
         .then(res=>{
             setPhotos([...photos, ...res.data]); //I need to be spread in an array ! let's see what happens if we don't include ...photos here !
+            dateFinal();
         }).catch(err=>{
             console.error(err);
         })
